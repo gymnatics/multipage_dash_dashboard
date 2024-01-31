@@ -3,6 +3,8 @@ import dash
 from dash import dcc, html, callback
 import plotly.express as px
 from dash.dependencies import Input, Output
+import navigation
+
 
 dash.register_page(__name__, path='/distribution', name="Distribution 📊")
 
@@ -19,6 +21,7 @@ dd = dcc.Dropdown(id="dist_column", options=columns, value="Age", clearable=Fals
 
 ####################### PAGE LAYOUT #############################
 layout = html.Div(children=[
+    navigation.navbar,
     html.Br(),
     html.P("Select Column:"),
     dd,
